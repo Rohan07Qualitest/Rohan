@@ -49,6 +49,7 @@ WebElement usernameele;
  
   public void quit() {
 	// TODO Auto-generated method stub
+	  driver.quit();
 	
 }
 @FindBy(id="home")
@@ -72,8 +73,8 @@ WebElement usernameele;
   @FindBy(xpath="//a[@id='navbarDropdown'][contains(.,'Support')]")
   WebElement support;
   
-  @FindBy(partialLinkText="order")
-  WebElement order;
+  @FindBy(partialLinkText="Order")
+  WebElement Order;
   
   @FindBy(partialLinkText="Contact Us")
   WebElement contactus;
@@ -98,7 +99,7 @@ WebElement usernameele;
   Set<String> windowHandles=driver.getWindowHandles();
   List<String> windowHandlesList = new ArrayList<>(windowHandles);
   System.out.println(driver.getWindowHandle());
-  order.click();
+  Order.click();
   System.out.println(driver.getWindowHandle());
   System.out.println("Total window number" + windowHandlesList.size() +"\n");
   //driver.switchTo().window(windowHandlesList.get(1));
@@ -118,8 +119,11 @@ public void quit1(){
 	driver.quit();
 }
 @FindBy(css="button.btn.btn-warning.my-2.my-sm-0")
-WebElement Signup;
+WebElement Signin;
 
+@FindBy(linkText="Sign up")
+WebElement Signup;
+	
 @FindBy(css="input[type='text']")
 WebElement firstname;
 
@@ -176,11 +180,11 @@ public void Sign_up(String fname,String lname,String mail,String uppwd,String do
 	alert();
 	delay();
 	regsignin.click();
-	driver.switchTo().alert().accept();
-	quit();
+	//driver.switchTo().alert().accept();
 	//alert();
 	
 	//alert();
+	quit();
 }
 public void alert() {
 	// TODO Auto-generated method stub
